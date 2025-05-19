@@ -1,0 +1,77 @@
+<!-- components/chart/chart.wxml -->
+<view class="chart-wrapper">
+  <view class="chart-container">
+    <!-- 使用普通视图实现柱状图 -->
+    <view class="bar-chart">
+      <!-- 柱状图容器 -->
+      <view class="bar-container">
+        <!-- 金柱 -->
+        <view class="bar-group">
+          <view class="bar-value">{{wuxingDataEn.jin}}</view>
+          <view class="bar jin-bar" style="height: {{wuxingDataEn.jin > 0 ? (wuxingDataEn.jin * 30) : 5}}rpx;"></view>
+          <view class="bar-label">金</view>
+        </view>
+        
+        <!-- 木柱 -->
+        <view class="bar-group">
+          <view class="bar-value">{{wuxingDataEn.mu}}</view>
+          <view class="bar mu-bar" style="height: {{wuxingDataEn.mu > 0 ? (wuxingDataEn.mu * 30) : 5}}rpx;"></view>
+          <view class="bar-label">木</view>
+        </view>
+        
+        <!-- 水柱 -->
+        <view class="bar-group">
+          <view class="bar-value">{{wuxingDataEn.shui}}</view>
+          <view class="bar shui-bar" style="height: {{wuxingDataEn.shui > 0 ? (wuxingDataEn.shui * 30) : 5}}rpx;"></view>
+          <view class="bar-label">水</view>
+        </view>
+        
+        <!-- 火柱 -->
+        <view class="bar-group">
+          <view class="bar-value">{{wuxingDataEn.huo}}</view>
+          <view class="bar huo-bar" style="height: {{wuxingDataEn.huo > 0 ? (wuxingDataEn.huo * 30) : 5}}rpx;"></view>
+          <view class="bar-label">火</view>
+        </view>
+        
+        <!-- 土柱 -->
+        <view class="bar-group">
+          <view class="bar-value">{{wuxingDataEn.tu}}</view>
+          <view class="bar tu-bar" style="height: {{wuxingDataEn.tu > 0 ? (wuxingDataEn.tu * 30) : 5}}rpx;"></view>
+          <view class="bar-label">土</view>
+        </view>
+      </view>
+      
+      <!-- X轴 -->
+      <view class="x-axis"></view>
+    </view>
+    
+    <!-- 图例 -->
+    <view class="wuxing-legend">
+      <view class="legend-item">
+        <view class="color-box jin-color"></view>
+        <view class="wuxing-label">金: {{wuxingDataEn.jin}}</view>
+      </view>
+      <view class="legend-item">
+        <view class="color-box mu-color"></view>
+        <view class="wuxing-label">木: {{wuxingDataEn.mu}}</view>
+      </view>
+      <view class="legend-item">
+        <view class="color-box shui-color"></view>
+        <view class="wuxing-label">水: {{wuxingDataEn.shui}}</view>
+      </view>
+      <view class="legend-item">
+        <view class="color-box huo-color"></view>
+        <view class="wuxing-label">火: {{wuxingDataEn.huo}}</view>
+      </view>
+      <view class="legend-item">
+        <view class="color-box tu-color"></view>
+        <view class="wuxing-label">土: {{wuxingDataEn.tu}}</view>
+      </view>
+    </view>
+    
+    <!-- 调试信息 -->
+    <view class="debug-info" wx:if="{{wuxingDataEn}}">
+      <text>五行数据：金 {{wuxingDataEn.jin}} 木 {{wuxingDataEn.mu}} 水 {{wuxingDataEn.shui}} 火 {{wuxingDataEn.huo}} 土 {{wuxingDataEn.tu}}</text>
+    </view>
+  </view>
+</view> 

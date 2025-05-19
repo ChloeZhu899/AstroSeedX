@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "星命阁 · AstroSeed.X 分析结果",
+  "usingComponents": {
+    "chart": "/components/chart/chart",
+    "result-card": "/components/result-card/result-card"
+  }
+} 

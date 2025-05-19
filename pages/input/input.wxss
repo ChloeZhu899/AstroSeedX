@@ -1,0 +1,212 @@
+/* pages/input/input.wxss */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  position: relative;
+  padding-top: 180rpx; /* 为自定义导航腾出空间 */
+}
+
+/* 背景图 */
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 自定义导航栏 */
+.custom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: transparent;
+  z-index: 1000;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.nav-back {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #333;
+  border-left: 4rpx solid #333;
+  transform: rotate(-45deg);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+/* 输入卡片 */
+.input-card, .api-card {
+  width: 90%;
+  background-color: transparent;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.input-label {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+  font-weight: bold;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 10rpx;
+}
+
+.input-content {
+  font-size: 32rpx;
+  color: #333;
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.placeholder {
+  color: #999;
+}
+
+.arrow-right {
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
+  transform: rotate(45deg);
+}
+
+/* API卡片 */
+.api-card {
+  padding: 30rpx;
+}
+
+.api-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.api-desc {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+}
+
+/* 提交按钮 */
+.main-button {
+  width: 90%;
+  height: 90rpx;
+  background-color: #8be28b;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  box-shadow: 0 6rpx 16rpx rgba(139, 226, 139, 0.4);
+}
+
+/* API卡片样式 */
+.api-card {
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background-color: transparent;
+}
+
+.api-key-input-row {
+  padding: 20rpx 0;
+  border-top: 1rpx dashed #eee;
+}
+
+.api-input {
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+
+.api-warning {
+  font-size: 22rpx;
+  color: #ff6b6b;
+  margin-top: 10rpx;
+}
+
+/* 开发模式切换按钮 */
+.dev-mode-toggle {
+  font-size: 24rpx;
+  color: #8CD790;
+  text-align: center;
+  margin-bottom: 30rpx;
+  text-decoration: underline;
+}
+
+/* 按钮样式 */
+.main-button {
+  width: 60%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #8CD790;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-top: 40rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+} 

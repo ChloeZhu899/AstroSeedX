@@ -1,0 +1,24 @@
+<!-- pages/divination/divination.wxml -->
+<view class="container">
+  <!-- 添加背景图片 -->
+  <image class="bg-image" src="/assets/images/background.png" mode="aspectFill"></image>
+  
+  <view class="title">更多占卜</view>
+  <view class="subtitle">选择您感兴趣的占卜类型</view>
+  
+  <view class="divination-grid">
+    <view class="option-card" 
+          wx:for="{{divinationTypes}}" 
+          wx:key="id" 
+          bindtap="selectDivinationType" 
+          data-id="{{item.id}}">
+      <image class="option-icon" src="{{item.icon}}" mode="aspectFit"></image>
+      <view class="option-title">{{item.title}}</view>
+      <view class="option-desc">{{item.desc}}</view>
+    </view>
+  </view>
+  
+  <button class="secondary-button" bindtap="goBackToResult">
+    返回分析结果
+  </button>
+</view> 

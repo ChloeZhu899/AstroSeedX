@@ -1,0 +1,16 @@
+<!-- components/result-card/result-card.wxml -->
+<view class="result-card card">
+  <view class="result-title">{{title}}</view>
+  
+  <!-- 如果有内容文本 -->
+  <view class="result-content" wx:if="{{content}}">
+    {{content}}
+  </view>
+  
+  <!-- 如果有列表项 -->
+  <view class="result-items" wx:if="{{items.length > 0}}">
+    <view class="result-item" wx:for="{{items}}" wx:key="index">
+      <view class="item-content">{{item}}</view>
+    </view>
+  </view>
+</view> 

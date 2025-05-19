@@ -1,0 +1,304 @@
+/* pages/result/result.wxss */
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 自定义导航栏 */
+.custom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: transparent;
+  z-index: 1000;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.nav-back {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #333;
+  border-left: 4rpx solid #333;
+  transform: rotate(-45deg);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.container {
+  padding-top: 90rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  /* 强制启用硬件加速 */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 背景图样式 */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: transparent;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  z-index: 1;
+  width: 90%;
+}
+
+/* 加载中样式 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid rgba(140, 215, 144, 0.3);
+  border-top: 6rpx solid #8CD790;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 32rpx;
+  color: #666;
+}
+
+/* 错误提示样式 */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.error-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.error-icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 70rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.error-text {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+/* 基本信息样式 */
+.info-row {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.info-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #666;
+  font-weight: 500;
+}
+
+.info-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 五行分布样式 */
+.wuxing-lack {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #ff6b6b;
+  text-align: center;
+}
+
+/* 图表容器样式 */
+.chart-container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  overflow: hidden;
+  position: relative;
+  will-change: transform;
+}
+
+.chart-inner-wrapper {
+  width: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* AI命理分析样式 */
+.ai-summary {
+  margin-top: 20rpx;
+}
+
+.summary-item {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  position: relative;
+}
+
+.summary-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14rpx;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #8CD790;
+}
+
+/* 操作按钮样式 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.main-button {
+  width: 60%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #8CD790;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.secondary-button {
+  width: 60%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #666;
+  border: 1rpx solid #ddd;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+}
+
+/* 无数据提示样式 */
+.no-data {
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  padding: 30rpx 0;
+}
+
+/* 调试卡片样式 */
+.debug-card {
+  margin-top: 40rpx;
+  border-top: 1rpx dashed #ddd;
+}
+
+.raw-data {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #666;
+  max-height: 400rpx;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.notice-text {
+  font-size: 24rpx;
+  color: #ff6b6b;
+  text-align: center;
+  margin: 20rpx 0;
+  padding: 10rpx;
+  background-color: #fff8f8;
+  border-radius: 8rpx;
+}
+
+/* 基本信息卡片样式 */
+.basic-info-card {
+  margin-top: -10rpx;
+  margin-bottom: 20rpx;
+} 

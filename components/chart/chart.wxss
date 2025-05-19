@@ -1,0 +1,144 @@
+/* components/chart/chart.wxss */
+
+.chart-wrapper {
+  width: 100%;
+  position: relative;
+  transform: translate3d(0, 0, 0); /* 强制启用硬件加速，防止闪烁 */
+  z-index: 1;
+}
+
+.chart-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+/* 柱状图样式 */
+.bar-chart {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px 10px 30px;
+  margin: 10px 0;
+}
+
+/* X轴 */
+.x-axis {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background-color: #999;
+}
+
+/* 柱状图容器 */
+.bar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 160px;
+  width: 100%;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+/* 每个柱子组 */
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+  max-width: 50px;
+}
+
+/* 柱子样式 */
+.bar {
+  width: 100%;
+  min-height: 5rpx;
+  background-color: #ccc;
+  position: relative;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 柱子数值 */
+.bar-value {
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 柱子标签 */
+.bar-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* 各元素颜色样式 */
+.jin-bar { background-color: #FFD700; }
+.mu-bar { background-color: #228B22; }
+.shui-bar { background-color: #1E90FF; }
+.huo-bar { background-color: #FF4500; }
+.tu-bar { background-color: #8B4513; }
+
+/* 调试信息样式 */
+.debug-info {
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0;
+  text-align: center;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 4px;
+  width: 90%;
+}
+
+/* 五行分布图例 */
+.wuxing-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: transparent;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 5px 5px 0;
+}
+
+.color-box {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+.wuxing-label {
+  font-size: 12px;
+  color: #333;
+}
+
+/* 五行元素颜色 */
+.jin-color { background-color: #FFD700; }
+.mu-color { background-color: #228B22; }
+.shui-color { background-color: #1E90FF; }
+.huo-color { background-color: #FF4500; }
+.tu-color { background-color: #8B4513; } 

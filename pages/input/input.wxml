@@ -1,0 +1,68 @@
+<!-- pages/input/input.wxml -->
+<view class="container">
+  <!-- 添加背景图片 -->
+  <image class="bg-image" src="/assets/images/background.png" mode="aspectFill"></image>
+  
+  <!-- 返回按钮 -->
+  <view class="custom-nav">
+    <navigator open-type="navigateBack" class="nav-back">
+      <view class="back-icon"></view>
+    </navigator>
+    <view class="nav-title">星命阁 · AstroSeed.X</view>
+  </view>
+  
+  <view class="card input-card">
+    <view class="title">请输入您的出生信息</view>
+    <view class="subtitle">准确的出生信息可以获得更精准的命理分析</view>
+    
+    <view class="input-row">
+      <view class="input-label">出生日期</view>
+      <picker mode="date" value="{{birthDate}}" start="1900-01-01" end="2100-12-31" bindchange="bindDateChange">
+        <view class="input-content">
+          {{birthDate}}
+          <view class="arrow-right"></view>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="input-row">
+      <view class="input-label">出生时辰</view>
+      <picker mode="selector" range="{{shichenList}}" range-key="label" value="{{birthTimeIndex}}" bindchange="bindShichenChange">
+        <view class="input-content">
+          {{shichenList[birthTimeIndex].label}}
+          <view class="arrow-right"></view>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="input-row">
+      <view class="input-label">性别<text class="required">*</text></view>
+      <picker mode="selector" range="{{['男', '女']}}" bindchange="bindGenderChange">
+        <view class="input-content {{!gender ? 'placeholder' : ''}}">
+          {{gender || '请选择'}}
+          <view class="arrow-right"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <!-- API配置卡片 -->
+  <view class="card api-card">
+    <view class="api-title">API配置</view>
+    <view class="api-desc">选择API调用模式</view>
+    
+    <view class="input-row">
+      <view class="input-label">API模式</view>
+      <picker mode="selector" range="{{apiModeOptions}}" range-key="label" bindchange="bindApiModeChange">
+        <view class="input-content">
+          {{apiModeLabel}}
+          <view class="arrow-right"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <button class="main-button" bindtap="handleSubmit" loading="{{isLoading}}">
+    开始分析
+  </button>
+</view>

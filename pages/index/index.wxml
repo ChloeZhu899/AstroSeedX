@@ -1,0 +1,17 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 添加背景图片 -->
+  <image class="bg-image" src="/assets/images/background.png" mode="aspectFill"></image>
+  
+  <view class="logo-container">
+    <image class="logo" src="/assets/images/moon.png" mode="aspectFit"></image>
+    <view class="app-title">AstroSeed</view>
+    <view class="app-subtitle">命理分析小程序</view>
+  </view>
+  
+  <view class="start-button-container">
+    <button class="main-button start-button" bindtap="handleStart" loading="{{isLoading}}">
+      开始分析
+    </button>
+  </view>
+</view> 

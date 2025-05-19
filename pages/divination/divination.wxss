@@ -1,0 +1,69 @@
+/* pages/divination/divination.wxss */
+.container {
+  padding: 40rpx 0;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.divination-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 30rpx;
+}
+
+.option-card {
+  width: 300rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 15rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+
+.option-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.option-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.option-desc {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #666;
+  border: 1rpx solid #ddd;
+  border-radius: 50rpx;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+  margin-top: 80rpx;
+  width: 80%;
+} 

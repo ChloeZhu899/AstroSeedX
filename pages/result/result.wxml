@@ -1,0 +1,114 @@
+<!-- pages/result/result.wxml -->
+<view class="page-wrapper">
+  <!-- 添加背景图片 -->
+  <image class="bg-image" src="/assets/images/background.png" mode="aspectFill"></image>
+  
+  <view class="container">
+    <!-- 加载中 -->
+    <view class="loading-container" wx:if="{{isLoading}}">
+      <view class="loading">
+        <view class="loading-icon"></view>
+        <view class="loading-text">命理分析中...</view>
+      </view>
+    </view>
+    
+    <!-- 错误提示 -->
+    <view class="error-container" wx:elif="{{error}}">
+      <view class="card error-card">
+        <view class="error-icon">!</view>
+        <view class="error-text">{{error}}</view>
+        <button class="main-button" bindtap="handleReanalyze">重新分析</button>
+      </view>
+    </view>
+    
+    <!-- 分析结果 -->
+    <block wx:elif="{{result}}">
+      <!-- 基本信息 -->
+      <view class="card basic-info-card">
+        <view class="title">基本信息</view>
+        <view class="info-row">
+          <view class="info-label">阳历日期:</view>
+          <view class="info-value">{{birthDate || '暂无数据'}}</view>
+        </view>
+        <view class="info-row">
+          <view class="info-label">出生时辰:</view>
+          <view class="info-value">{{birthTimeStr || '暂无数据'}}</view>
+        </view>
+        <view class="info-row">
+          <view class="info-label">农历日期:</view>
+          <view class="info-value">{{result.lunarDate || '暂无数据'}}</view>
+        </view>
+        <view class="info-row">
+          <view class="info-label">当时节气:</view>
+          <view class="info-value">{{result.solarTerm || '暂无数据'}}</view>
+        </view>
+        <view class="info-row">
+          <view class="info-label">生肖:</view>
+          <view class="info-value">{{result.zodiac || '暂无数据'}}</view>
+        </view>
+        <view class="info-row">
+          <view class="info-label">八字:</view>
+          <view class="info-value">{{baziString || '暂无数据'}}</view>
+        </view>
+      </view>
+      
+      <!-- 五行分布 -->
+      <view class="card">
+        <view class="title">五行分布</view>
+        <!-- 五行数据调试信息 -->
+        <view class="debug-info" wx:if="{{debugMode}}">
+          <text>五行数据: {{wuxingString || '无数据'}}</text>
+        </view>
+        
+        <!-- 五行图表 -->
+        <view class="chart-container">
+          <view class="chart-inner-wrapper">
+            <chart wuxingData="{{wuxingObj}}" wx:if="{{result.wuxing}}" id="wuxingChart"></chart>
+            <view class="no-data" wx:else>
+              暂无五行分布数据
+            </view>
+          </view>
+        </view>
+        
+        <!-- 如果使用了默认数据，显示提示 -->
+        <view class="notice-text" wx:if="{{wuxingEn && wuxingEn.jin === 0 && wuxingEn.mu === 0 && wuxingEn.shui === 0 && wuxingEn.huo === 0 && wuxingEn.tu === 0}}">
+          注意：五行数据全为0，图表可能无法正常显示
+        </view>
+        
+        <!-- 五行缺失分析 -->
+        <view class="wuxing-lack" wx:if="{{result.wuxingLack}}">
+          {{result.wuxingLack}}
+        </view>
+      </view>
+      
+      <!-- AI命理分析 -->
+      <view class="card">
+        <view class="title">命理分析</view>
+        <view class="ai-summary">
+          <block wx:if="{{result.aiSummary && result.aiSummary.length > 0}}">
+            <view class="summary-item" wx:for="{{result.aiSummary}}" wx:key="index">
+              {{item}}
+            </view>
+          </block>
+          <view class="no-data" wx:else>
+            暂无命理分析数据
+          </view>
+        </view>
+      </view>
+      
+      <!-- 原始数据（调试用） -->
+      <view class="card debug-card" wx:if="{{rawResult && debugMode}}">
+        <view class="title">原始数据（调试用）</view>
+        <view class="raw-data">
+          <text selectable="true">{{rawResult}}</text>
+        </view>
+      </view>
+      
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <button class="main-button" bindtap="handleMoreDivination">查看更多占卜</button>
+        <button class="secondary-button" bindtap="handleReanalyze">重新分析</button>
+      </view>
+    </block>
+  </view>
+</view> 
